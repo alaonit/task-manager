@@ -3,7 +3,7 @@ import { handlegetTaskById,handleGetTasks } from "./handlers/taskHandlers.js"
 
 const PORT = 8000
 const server = createServer((req,res)=>{
-  res.setHeader("Access-Control-Allow-Origin", "http://localhost:5173");
+  res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
