@@ -1,15 +1,27 @@
 import http, { createServer } from "node:http"
+import {eventHandlers} from "./handlers/eventHandlers.js"
 
 const PORT = 8000
 const server = createServer((req,res)=>{
 
   if(req.url === '/api' && req.method==='GET'){
+
+    if(req.url.startsWith('/api')){
+
+      eventHandlers(
+      res,
+      "application/json",
+      200,
+      task
+      )  
+    }
     
+
+  }else if(req.url === '/api' && req.method === 'POST'){
+    ///
   }
 
-  res.setHeader("Content-Type","application/json")
-  res.statusCode = 200
-  res.end(JSON.stringify({"message":"Server is running"}))
+  
 })
 
 server.listen(
