@@ -1,5 +1,6 @@
 import http, { createServer } from "node:http"
-import {eventHandlers} from "./handlers/eventHandlers.js"
+import {sendResponse} from "./handlers/sendResponse.js"
+import { handlegetTaskById } from "./handlers/taskHandlers.js"
 
 const PORT = 8000
 const server = createServer((req,res)=>{
@@ -8,7 +9,9 @@ const server = createServer((req,res)=>{
 
     if(req.url.startsWith('/api')){
 
-      eventHandlers(
+      handlegetTaskById(req,res)
+
+      sendResponse(
       res,
       "application/json",
       200,
@@ -18,7 +21,7 @@ const server = createServer((req,res)=>{
     
 
   }else if(req.url === '/api' && req.method === 'POST'){
-    ///
+    
   }
 
   
