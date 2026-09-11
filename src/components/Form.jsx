@@ -3,8 +3,9 @@ function Form() {
     const task = formData.get("taskName");
     const stuff = formData.get("category");
     const description = formData.get("description");
+    const status = formData.get("status")
 
-    console.log(task, stuff, description);
+    console.log(task, stuff, description,status);
   }
 
   return (
@@ -103,6 +104,15 @@ function Form() {
               focus:ring-blue-100
             "
           />
+        </div>
+
+        <div className="w-full mb-4">
+          <select name="status" id="status">
+            <option value="">Select Status</option>
+            <option value="">Pending</option>
+            <option value="">in-progress</option>
+            <option value="">completed</option>
+          </select>
         </div>
 
         <button
