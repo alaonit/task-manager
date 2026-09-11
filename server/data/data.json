@@ -20,5 +20,12 @@
     "category": "Programming",
     "description": "Finish the Task Manager application",
     "status": "completed"
+  },
+  {
+    "id": 4,
+    "taskName": "Adding Post path to the Server",
+    "category": "Coding",
+    "description": "I have to add this to be able to post new tasks",
+    "status": "in-progress"
   }
 ]

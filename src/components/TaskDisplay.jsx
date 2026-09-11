@@ -1,7 +1,7 @@
 function TaskDisplay({ tasks }) {
   return (
     <div className="p-8">
-      <table className="w-full border-collapse bg-white rounded-lg overflow-hidden shadow-sm overflow-x-auto">
+      <table className="w-full border-collapse bg-white rounded-lg overflow-hidden shadow-sm overflow-x-auto mb-3">
         <thead className="bg-gray-100">
           <tr>
             <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700">ID</th>
@@ -16,7 +16,7 @@ function TaskDisplay({ tasks }) {
           {tasks.map((task) => {
             return (
               <tr key={task.id}>
-                <td>{task.id}</td>
+                <td className="font-bold p-2">{task.id}</td>
                 <td>{task.taskName}</td>
                 <td>{task.category}</td>
                 <td>{task.description}</td>
