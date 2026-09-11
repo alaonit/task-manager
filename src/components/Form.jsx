@@ -1,7 +1,7 @@
 function Form() {
   function submit(formData) {
     const task = formData.get("taskName");
-    const stuff = formData.get("stuff");
+    const stuff = formData.get("category");
     const description = formData.get("description");
 
     console.log(task, stuff, description);
@@ -60,9 +60,9 @@ function Form() {
           </label>
 
           <input
-            id="stuff"
+            id="category"
             type="text"
-            name="stuff"
+            name="category"
             placeholder="e.g. Development"
             className="
               w-full
