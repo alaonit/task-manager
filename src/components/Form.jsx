@@ -4,18 +4,18 @@ function Form() {
     console.log(task);
   }
   return (
-    <form className="bg-amber-200 flex flex-col" action={submit}>
-      <div>
+    <form className="bg-amber-200" action={submit}>
+      <div className="flex flex-col w-2xl">
         <label htmlFor="taskName">Task</label>
         <input id="taskName" type="text" name="textName" />
 
-        <label htmlFor="">Task</label>
-        <input id="text" type="text" name="text" />
+        <label htmlFor="stuff">Stuff</label>
+        <input id="stuff" type="text" name="stuff" />
 
         <label htmlFor="description">Description</label>
         <textarea name="description" id="description"></textarea>
 
-        <button>Submit</button>
+        <button className="bg-green-500 p-2">Submit</button>
       </div>
     </form>
   );
