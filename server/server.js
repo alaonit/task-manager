@@ -1,30 +1,17 @@
 import http, { createServer } from "node:http"
 import {sendResponse} from "./handlers/sendResponse.js"
-import { handlegetTaskById } from "./handlers/taskHandlers.js"
+import { handlegetTaskById,handleGetTasks } from "./handlers/taskHandlers.js"
 
 const PORT = 8000
 const server = createServer((req,res)=>{
 
-  if(req.url === '/api' && req.method==='GET'){
+  if(req.url === '/api/tasks' && req.method==='GET'){
+       handleGetTasks(res)
 
-    if(req.url.startsWith('/api')){
+  }else if(req.url === '/api/tasks' && req.method==='GET'){
+    handlegetTaskById(req,res) 
 
-      handlegetTaskById(req,res)
-
-      sendResponse(
-      res,
-      "application/json",
-      200,
-      task
-      )  
-    }
-    
-
-  }else if(req.url === '/api' && req.method === 'POST'){
-    
   }
-
-  
 })
 
 server.listen(
