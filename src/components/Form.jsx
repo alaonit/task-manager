@@ -9,7 +9,7 @@ function Form() {
   }
 
   return (
-    <section className="min-h-screen bg-gray-50 flex justify-center items-center p-8">
+    <section className="min-h-screen flex justify-center items-center p-10">
 
       <form
         action={submit}

@@ -2,7 +2,7 @@
 
 function Header(){
   return(
-    <header className=" bg-blue-400 flex justify-between items-center p-5 mb-20">
+    <header className=" bg-blue-400 flex justify-between items-center p-5">
       <h1 className="text-white font-bold text-2xl">TaskM</h1>
 
       <nav>

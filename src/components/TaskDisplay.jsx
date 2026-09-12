@@ -1,7 +1,7 @@
 function TaskDisplay({ tasks }) {
   return (
     <div className="p-8">
-      <table className="w-full border-collapse bg-white rounded-lg overflow-hidden shadow-sm overflow-x-auto mb-3">
+      <table className="w-full border-collapse bg-white rounded-lg overflow-hidden shadow-sm overflow-x-auto">
         <thead className="bg-gray-100">
           <tr>
             <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700">ID</th>

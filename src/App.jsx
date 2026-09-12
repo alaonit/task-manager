@@ -18,7 +18,7 @@ function App(){
   return(
     <>
       <Header/>
-      <main>
+      <main className=" bg-gray-50 ">
         <Form/>
         <TaskDisplay tasks={tasks}/>
       </main>
