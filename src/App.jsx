@@ -1,14 +1,29 @@
+import { useEffect, useState } from "react";
+import Form from "./components/Form.jsx"
+import Header from "./components/Header.jsx";
+import TaskDisplay from "./components/TaskDisplay.jsx";
 
 
 function App(){
+  const [tasks, setTasks] = useState([]);
+
+  useEffect(()=>{
+    fetch("http://localhost:8000/api/tasks").
+    then((response)=> response.json()).
+    then((data)=>{
+      setTasks(data)
+    })
+  },[])
+
   return(
-    <main>
-       <div className="min-h-screen bg-gray-100 p-10">
-      <h1 className="text-4xl font-bold text-blue-600">
-        Task Manager
-      </h1>
-    </div>
-    </main>
+    <>
+      <Header/>
+      <main className=" bg-gray-50 ">
+        <Form/>
+        <TaskDisplay tasks={tasks}/>
+      </main>
+    </>
+    
   )
 }
 

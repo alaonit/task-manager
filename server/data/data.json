@@ -1,0 +1,31 @@
+
+[
+  {
+    "id": 1,
+    "taskName": "Learn Node.js",
+    "category": "Programming",
+    "description": "Practice building a Node.js API",
+    "status": "pending"
+  },
+  {
+    "id": 2,
+    "taskName": "Build Task Manager",
+    "category": "Project",
+    "description": "Finish the Task Manager application",
+    "status": "in-progress"
+  },
+  {
+    "id": 3,
+    "taskName": "Connection to Node.js",
+    "category": "Programming",
+    "description": "Finish the Task Manager application",
+    "status": "completed"
+  },
+  {
+    "id": 4,
+    "taskName": "Adding Post path to the Server",
+    "category": "Coding",
+    "description": "I have to add this to be able to post new tasks",
+    "status": "in-progress"
+  }
+]
