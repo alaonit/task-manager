@@ -1,6 +1,7 @@
 
-import { readFile } from "node:fs/promises";
+import { readFile,writeFile } from "node:fs/promises";
 import {sendResponse} from "./sendResponse.js"
+import { json } from "node:stream/consumers";
 
 export async function handleGetTasks(res){
 
@@ -52,8 +53,50 @@ export async function handlegetTaskById(req,res){
       res,
       "application/json",
       404,
-      {"message":"Taks not found"}
+      {"message":"Task not found"}
     )
   }
 
 }
+
+export async function deleteTask(req,res){
+  const id = Number(req.url.split("/").pop());
+
+  const data = await readFile("./data/data.json")
+
+  const tasks = JSON.parse(data)
+
+  const task = tasks.find((task) => {
+    return task.id === id
+  })
+  
+
+  if(task){
+
+    const filteredTask = tasks.filter((task)=>{
+      return task.id !== id
+    })
+
+    const jsonData = JSON.stringify(filteredTask)
+
+    await writeFile(
+      "./data/data.json",
+      jsonData
+    )
+    sendResponse(
+      res,
+      "application/json",
+      200,
+      filteredTask
+    )
+  }else{
+    sendResponse(
+      res,
+      "application/json",
+      404,
+      {"message" : "Task not found"}
+    )
+  }
+  
+
+}   

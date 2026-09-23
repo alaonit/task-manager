@@ -1,30 +1,34 @@
 import { useEffect, useState } from "react";
-import Form from "./components/Form.jsx"
+import Form from "./components/Form.jsx";
 import Header from "./components/Header.jsx";
 import TaskDisplay from "./components/TaskDisplay.jsx";
 
-
-function App(){
+function App() {
   const [tasks, setTasks] = useState([]);
 
-  useEffect(()=>{
-    fetch("http://localhost:8000/api/tasks").
-    then((response)=> response.json()).
-    then((data)=>{
-      setTasks(data)
-    })
-  },[])
+  useEffect(() => {
+    fetch("http://localhost:8000/api/tasks")
+      .then((response) => response.json())
+      .then((data) => {
+        setTasks(data);
+      });
+  }, []);
 
-  return(
+  function deleteTask(id) {
+    fetch(`http://localhost:8000/api/tasks/${id}`, {
+      method: "DELETE",
+    });
+  }
+
+  return (
     <>
-      <Header/>
+      <Header />
       <main className=" bg-gray-50 ">
-        <Form/>
-        <TaskDisplay tasks={tasks}/>
+        <Form />
+        <TaskDisplay deleteTask={deleteTask} tasks={tasks} />
       </main>
     </>
-    
-  )
+  );
 }
 
 export default App;

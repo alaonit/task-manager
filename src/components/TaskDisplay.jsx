@@ -1,4 +1,5 @@
-function TaskDisplay({ tasks }) {
+function TaskDisplay({ tasks,deleteTask }) {
+
   return (
     <div className="p-8">
       <table className="w-full border-collapse bg-white rounded-lg overflow-hidden shadow-sm overflow-x-auto">
@@ -15,12 +16,13 @@ function TaskDisplay({ tasks }) {
         <tbody >
           {tasks.map((task) => {
             return (
-              <tr key={task.id}>
+              <tr className="m-1" key={task.id}>
                 <td className="font-bold p-2">{task.id}</td>
                 <td>{task.taskName}</td>
                 <td>{task.category}</td>
                 <td>{task.description}</td>
                 <td>{task.status}</td>
+                <td onClick={()=>deleteTask(task.id)} className="mb-1 p-2.5 border-1 border-blue-600 bg-white text-red-600 rounded-md cursor-pointer text-center">x</td>
               </tr>
             );
           })}

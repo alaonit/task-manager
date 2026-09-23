@@ -7,6 +7,7 @@
     "description": "Practice building a Node.js API",
     "status": "pending"
   },
+
   {
     "id": 2,
     "taskName": "Build Task Manager",
@@ -14,6 +15,7 @@
     "description": "Finish the Task Manager application",
     "status": "in-progress"
   },
+
   {
     "id": 3,
     "taskName": "Connection to Node.js",
@@ -21,6 +23,7 @@
     "description": "Finish the Task Manager application",
     "status": "completed"
   },
+  
   {
     "id": 4,
     "taskName": "Adding Post path to the Server",
